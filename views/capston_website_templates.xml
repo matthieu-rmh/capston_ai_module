@@ -8,14 +8,14 @@
             </div>
 
               <!-- Card for the SEO analysis results -->
-        <div class="card score-card">
+        <div id="seo-card" class="card score-card">
     <div class="card-header d-flex justify-content-between align-items-center">
     <img style="width: 50px;
   height: 50px;
   margin: 10px;
 " src="/capston_ai/static/description/icon.png" alt="Capston AI logo"/>
       <h4 class="mb-0">SEO Analysis Summary</h4>
-      <span class="badge bg-primary overall-badge rounded-pill">Overall: 66/100</span>
+      <span id="overall-rating" class="badge bg-primary overall-badge rounded-pill">Overall: 66/100</span>
     </div>
 
     <div class="card-body px-4 py-3">
@@ -23,7 +23,7 @@
       <div class="score-item">
         <div class="d-flex justify-content-between align-items-baseline mb-1">
           <span class="score-label">Title</span>
-          <span class="score-value score-good">100</span>
+          <span class="score-value score-good" id="title-score">100</span>
         </div>
         <div class="progress">
           <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
@@ -34,7 +34,7 @@
       <div class="score-item">
         <div class="d-flex justify-content-between align-items-baseline mb-1">
           <span class="score-label">Description</span>
-          <span class="score-value score-bad">0</span>
+          <span id="description-score" class="score-value score-bad">0</span>
         </div>
         <div class="progress">
           <div class="progress-bar bg-danger" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -45,7 +45,7 @@
       <div class="score-item">
         <div class="d-flex justify-content-between align-items-baseline mb-1">
           <span class="score-label">Image SEO</span>
-          <span class="score-value score-good">100</span>
+          <span class="score-value score-good" id="image-seo-score">100</span>
         </div>
         <div class="progress">
           <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
@@ -55,9 +55,19 @@
 
     <div class="overall-footer d-flex justify-content-between align-items-center text-muted">
       <span>Final Score</span>
-      <span class="text-primary">66</span>
+      <span id="overall-score" class="text-primary">66</span>
     </div>
   </div>
+
+                    <!-- modal for loading -->
+                     <div id="vcl-modal-loading">
+                      <div id="vcl-modal-loading-icon" class="d-flex justify-content-center">
+                          <div id="vcl-loading-spinner" class="spinner-border" role="status">
+                              <!-- <span class="sr-only">Loading...</span> -->
+                          </div>
+                      </div>
+                      </div>
+              
 
 
 

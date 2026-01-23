@@ -8,7 +8,7 @@
     'author': 'Matthieu Heritiana',
     'website': 'https://www.yourwebsite.com',
     'category': 'Website',
-    'depends': ['base', 'website'],
+    'depends': ['base', 'web', 'website'],
     'data': [
         'security/ir.model.access.csv',
         'views/capston_data_views.xml',
