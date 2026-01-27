@@ -106,7 +106,7 @@
     </record>
 
     <template id="capston_analyse_product_seo_button" inherit_id="website_sale.product" name="Top Selling Products Section">
-        <xpath expr="//section[@id='product_detail']" position="inside">
+        <xpath expr="//section[@id='product_detail']/div[1]" position="inside">
             <div>
                 <button id="seo_analyzer" class="btn btn-primary">🔍 Analyse CAPSTON SEO</button>
 
