@@ -25,7 +25,9 @@
         # ],
         'web.assets_frontend': [
             'capston_ai/static/src/js/seo_analyzer_widget.js',
-            'capston_ai/static/src/css/custom.css'
+            'capston_ai/static/src/css/capston_dasboard.css',
+            'capston_ai/static/src/css/custom.css',
+            'capston_ai/static/src/css/fonts.css'
         ],
 },
 }

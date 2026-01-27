@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Recoleta';
+    /* Wrap the path in quotes to handle the space */
+    src: url('/capston_ai/static/src/fonts/Recoleta/Recoleta Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'satoshi';
+    /* Wrap the path in quotes to handle the space */
+    src: url('/capston_ai/static/src/fonts/satoshi/Satoshi-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}

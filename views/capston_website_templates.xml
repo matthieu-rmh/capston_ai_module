@@ -3,22 +3,102 @@
   <!-- Capston dashboard in a custom webpage -->
     <template id="capston_dashboard_template" name="Capston">
         <t t-call="website.layout">
-            <div id="wrap" class="oe_structure oe_empty">
-                <section class="s_text_block pt40 pb40">
-                    <div class="container text-center">
-                        <h1>Capston</h1>
-                        <p t-esc="message"/>
-                        <div class="alert alert-warning">
-                            Only users with **Administration / Settings** access can see this.
+
+        <div id="capston_body">
+
+        <div class="sidebar d-flex flex-column p-3">
+            <div style="display:flex;">
+              <img  src="/capston_ai/static/img/capston_wout_background.png" alt="Capston Dashboard Logo" style="width:50px;height:50px;"/>
+              <h4 class="text-center mb-4 mt-2" style="font-family: Recoleta;">capston.ai</h4>
+            </div>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="small text-uppercase px-4 mb-2" style="font-size: 0.7rem;">Main</li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link active"><i class="bi bi-house-door me-2"></i> Home</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link"><i class="bi bi-search me-2"></i> AI Search Console</a>
+                </li>
+                <hr class="mx-3 border-secondary"/>
+                <li class="small text-uppercase px-4 mb-2" style="font-size: 0.7rem;">Geo-Center</li>
+                <li>
+                    <a href="#" class="nav-link"><i class="bi bi-grid me-2"></i> Overview</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link"><i class="bi bi-shield-check me-2"></i> Audit</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div class="container-fluid">
+                <header class="d-flex justify-content-between align-items-center mb-5">
+                    <div>
+                        <h2 class="fw-bold" style="font-family: Recoleta;">Good morning, there</h2>
+                        <p class="text-muted">Your command center for AI viability</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <span class="badge rounded-pill bg-light text-dark border p-2 px-3 me-3">
+                            <span class="text-success">●</span> Plan Free
+                        </span>
+                        <div class="rounded-circle bg-dark text-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">A</div>
+                    </div>
+                </header>
+
+                <div class="card card-custom p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="fw-bold mb-0">Recommended Actions</h5>
+                        <span class="badge rounded-pill bg-warning text-dark">2</span>
+                    </div>
+                    
+                    <div class="alert alert-urgent d-flex justify-content-between align-items-center p-4 mb-3">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-exclamation-triangle-fill fs-3 me-3 text-danger"></i>
+                            <div>
+                                <span class="badge bg-danger mb-1">URGENT</span>
+                                <h6 class="mb-1 fw-bold">Low Citation Readiness</h6>
+                                <p class="mb-0 text-muted small">Optimize your metadata for AI citations.</p>
+                            </div>
+                        </div>
+                        <button class="btn btn-dark-custom btn-sm">Fix Now</button>
+                    </div>
+
+                    <div class="p-4 border rounded-3" style="background: #fffcf5;">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <span class="badge bg-info text-dark mb-1">OPPORTUNITY</span>
+                                <h6 class="fw-bold">AI bot access needs improvement</h6>
+                                <p class="text-muted small">Your robots.txt may block AI crawlers. Improving access could increase visibility by 30%.</p>
+                                <a href="#" class="text-dark fw-bold small text-decoration-none">Review Access <i class="bi bi-chevron-right"></i></a>
+                            </div>
                         </div>
                     </div>
-                </section>
+                </div>
+
+                <h6 class="fw-bold mt-5 mb-3"><i class="bi bi-globe me-2"></i> Quick Access</h6>
+                <div class="row g-3">
+                    <div class="col-md-2">
+                        <div class="card card-custom text-center p-3">
+                            <i class="bi bi-bar-chart-line fs-3"></i>
+                            <span class="small mt-2">Dashboard</span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card card-custom text-center p-3">
+                            <i class="bi bi-bullseye fs-3"></i>
+                            <span class="small mt-2">GEO Center</span>
+                        </div>
+                    </div>
+                    </div>
             </div>
+        </div>
+
+        </div>
         </t>
     </template>
   <!-- Menu for Capston AI dashboard page -->
     <record id="menu_capston_dashboard" model="website.menu">
-      <field name="name">Capston</field>
+      <field name="name">Capston AI</field>
       <field name="url">/capston-dashboard</field>
       <field name="parent_id" ref="website.main_menu"/>
       <field name="sequence" type="int">99</field>
