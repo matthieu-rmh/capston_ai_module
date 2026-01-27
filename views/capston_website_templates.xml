@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+  <!-- Capston dashboard in a custom webpage -->
+    <template id="capston_dashboard_template" name="Capston">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <section class="s_text_block pt40 pb40">
+                    <div class="container text-center">
+                        <h1>Capston</h1>
+                        <p t-esc="message"/>
+                        <div class="alert alert-warning">
+                            Only users with **Administration / Settings** access can see this.
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+  <!-- Menu for Capston AI dashboard page -->
+    <record id="menu_capston_dashboard" model="website.menu">
+      <field name="name">Capston</field>
+      <field name="url">/capston-dashboard</field>
+      <field name="parent_id" ref="website.main_menu"/>
+      <field name="sequence" type="int">99</field>
+      <field name="group_ids" eval="[(4, ref('base.group_system'))]"/>
+    </record>
+
     <template id="capston_analyse_product_seo_button" inherit_id="website_sale.product" name="Top Selling Products Section">
         <xpath expr="//section[@id='product_detail']" position="inside">
             <div>

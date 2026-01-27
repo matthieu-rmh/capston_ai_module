@@ -19,7 +19,18 @@ from odoo.tools import lazy
 
 _logger = logging.getLogger(__name__)
 
-class CapViCatalogController(http.Controller):
+class CapstonController(http.Controller):
+
+# Capston dashboard
+    @http.route('/capston-dashboard', type='http', auth="user", website=True)
+    def capston_dashboard(self, **kw):
+        # Security check: Check if user belongs to the 'Settings' group (Admin)
+        if not request.env.user.has_group('base.group_system'):
+            return request.render('website.403')  # Forbidden access page
+            
+        return request.render('capston_ai.capston_dashboard_template', {
+            'message': 'Welcome, Capston Administrator!'
+        })
 
     @http.route('/get_seo_results_from_page', type='json', auth="public")
     def get_seo_results_from_page(self, url_param):
