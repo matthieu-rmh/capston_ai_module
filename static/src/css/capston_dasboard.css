@@ -11,6 +11,12 @@
 #capston_body h6 {
     font-family: 'Recoleta';
 }
+
+#pages-list-table-container{
+    max-height: 600px;    /* Adjust this to your preferred height */
+    overflow-y: auto;     /* Adds vertical scrollbar if content exceeds height */
+    display: block;
+}
         
         /* Sidebar Styling */
         .sidebar {

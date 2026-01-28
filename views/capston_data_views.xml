@@ -9,7 +9,6 @@
        <list>
            <field name="title"/>
            <field name="description"/>
-
        </list>
    </field>
 </record>
@@ -23,6 +22,9 @@
                <!-- <button name="action_activate" string="Activate" type="object" class="oe_highlight" invisible="is_active == True"/>
                <button name="action_deactivate" string="Deactivate"
                        type="object" invisible="is_active == False"/> -->
+            <header>
+                <button name="test" string="Test Button" type="object" class="btn-primary"/>
+            </header>
            </header>
            <sheet>
                <group>

@@ -13,6 +13,7 @@
         'security/ir.model.access.csv',
         'views/capston_data_views.xml',
         'views/capston_website_templates.xml',
+        'views/capston_dashboard_templates.xml',
         'data/capston_data.xml'
     ],
     'demo': [],
@@ -26,6 +27,7 @@
         'web.assets_frontend': [
             'capston_ai/static/src/js/seo_analyzer_widget.js',
             'capston_ai/static/src/css/capston_dasboard.css',
+            'capston_ai/static/src/css/capston_ai_search.css',
             'capston_ai/static/src/css/custom.css',
             'capston_ai/static/src/css/fonts.css'
         ],
