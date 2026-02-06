@@ -17,6 +17,9 @@
                     <a href="/capston-dashboard-home" t-attf-class="nav-link {{ request.httprequest.path == '/capston-dashboard-home' and 'active' or '' }}"><i class="bi bi-house-door me-2"></i> Home</a>
                 </li>
                 <li class="nav-item">
+                    <a href="/capston-dashboard" t-attf-class="nav-link {{ request.httprequest.path == '/capston-dashboard' and 'active' or '' }}"><i class="bi bi-house-door me-2"></i> Dashboard</a>
+                </li>
+                <li class="nav-item">
                     <a href="/pages-list" t-attf-class="nav-link {{ request.httprequest.path == '/pages-list' and 'active' or '' }}"><i class="bi bi-house-door me-2"></i> Pages</a>
                 </li>
                 <li>
@@ -104,6 +107,102 @@
                       </div>
                       </div>
               </div>
+      </t>
+    </template>
+
+    <!-- Main Dashboard as of 02/05 -->
+    <template id="capston_dashboard_main" name="Capston Dashboard">
+    <t t-call="capston_ai.capston_dashboard_template">
+      <div class="container-fluid">
+    <div class="comparison-container">
+        <div class="d-flex justify-content-between mb-4">
+            <h3 class="fw-bold"><i class="bi bi-eye me-2"></i>CONTRASTES DE VISIBILITÉ : SIMULATION SERP</h3>
+            <span class="badge bg-light text-dark border rounded-pill">SIMULATION LIVE</span>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-danger fw-bold small">RENDU ACTUEL (OBSOLÈTE)</span>
+                    <span class="badge border text-muted bg-white rounded-pill">TITRE TROP LONG</span>
+                </div>
+                <div class="comp-card obsolete">
+                    <p class="text-muted small mb-1">https://votre-boutique.com > produits > p-1002</p>
+                    <h5 class="text-primary fw-bold">Chaise de bureau Ergonomique - Qualité Premium, Noir Mat et Confort...</h5>
+                    <p class="text-muted small">Découvrez notre chaise de bureau ergonomique. Conçue pour un usage professionnel intense, elle offre un maintien lombaire exceptionnel et un design...</p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-success fw-bold small">SUGGESTION PAR CAPSTONAI (IA)</span>
+                    <span class="badge bg-success-subtle text-success rounded-pill">OPTIMISÉ PAR CAPSTON AI</span>
+                </div>
+                <div class="comp-card optimized">
+                    <p class="text-muted small mb-1">https://votre-boutique.com > produits > p-1002</p>
+                    <h5 class="text-primary fw-bold">Chaise de bureau Ergonomique | Performance et Confort</h5>
+                    <p class="text-dark small"><strong>Maintien lombaire exceptionnel</strong> et design premium pour cette chaise ergonomique. Expédition sous 24h. Qualité certifiée Capston AI.</p>
+                </div>
+            </div>
+        </div>
+        
+        <button class="btn-optimize-main">OPTIMISER CE PRODUIT MAINTENANT <i class="bi bi-chevron-right ms-2"></i></button>
+    </div>
+
+    <div class="row g-4 mt-2">
+        <div class="col-md-4">
+            <div class="side-card">
+                <h6 class="fw-bold mb-4 text-uppercase small"><i class="bi bi-activity me-2 text-danger"></i> Journal d'optimisation</h6>
+                
+                <div class="journal-item">
+                    <div class="journal-icon bg-primary-subtle text-primary"><i class="bi bi-check2"></i></div>
+                    <div>
+                        <div class="fw-bold small">PRODUIT #102 MIS À JOUR</div>
+                        <div class="text-muted smaller" style="font-size: 0.7rem;">Titre optimisé par l'IA • Il y a 5 min</div>
+                    </div>
+                </div>
+
+                <div class="journal-item">
+                    <div class="journal-icon bg-warning-subtle text-warning"><i class="bi bi-images"></i></div>
+                    <div>
+                        <div class="fw-bold small">4 BALISES ALT GÉNÉRÉES</div>
+                        <div class="text-muted smaller" style="font-size: 0.7rem;">Traitement par lot terminé • Il y a 12 min</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="side-card">
+                <h6 class="fw-bold mb-4 text-uppercase small"><span class="text-danger me-2">●</span> Actions Prioritaires</h6>
+                
+                <div class="action-row">
+                    <div>
+                        <div class="fw-bold font-monospace">SUPPORT ÉCRAN DOUBLE</div>
+                        <div class="text-muted smaller" style="font-size: 0.7rem;">REF: P-4X</div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="score-pill bg-danger-subtle text-danger">35</div>
+                        <span class="badge border text-muted rounded-pill small">CRITIQUE</span>
+                        <button class="btn btn-dark btn-sm rounded-3"><i class="bi bi-stars"></i></button>
+                    </div>
+                </div>
+
+                <div class="action-row">
+                    <div>
+                        <div class="fw-bold font-monospace">BUREAU EN BOIS MASSIF</div>
+                        <div class="text-muted smaller" style="font-size: 0.7rem;">REF: P-2X</div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="score-pill bg-danger-subtle text-danger">38</div>
+                        <span class="badge border text-muted rounded-pill small">CRITIQUE</span>
+                        <button class="btn btn-dark btn-sm rounded-3"><i class="bi bi-stars"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
       </t>
     </template>
   <!-- Menu for Capston AI dashboard page -->

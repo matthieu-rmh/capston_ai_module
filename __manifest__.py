@@ -29,6 +29,7 @@
             'capston_ai/static/src/css/capston_dasboard.css',
             'capston_ai/static/src/css/capston_ai_search.css',
             'capston_ai/static/src/css/custom.css',
+            'capston_ai/static/src/css/main_dashboard.css',
             'capston_ai/static/src/css/fonts.css'
         ],
 },

@@ -7,6 +7,7 @@ import json
 import os
 import logging
 import requests
+import random
 from markupsafe import Markup
 from werkzeug.exceptions import Forbidden
 from odoo.addons.website.controllers.main import QueryURL
@@ -29,6 +30,15 @@ class CapstonController(http.Controller):
             return request.render('website.403')  # Forbidden access page
             
         return request.render('capston_ai.capston_dashboard_home', {})
+
+        # Capston main dashboard
+    @http.route('/capston-dashboard', type='http', auth="user", website=True)
+    def capston_dashboard_main(self, **kw):
+        # Security check: Check if user belongs to the 'Settings' group (Admin)
+        if not request.env.user.has_group('base.group_system'):
+            return request.render('website.403')  # Forbidden access page
+            
+        return request.render('capston_ai.capston_dashboard_main', {})
 
 # Capston AI Search Console
     @http.route('/ai-search-console', type='http', auth="user", website=True)
@@ -54,7 +64,7 @@ class CapstonController(http.Controller):
          pages.append(page)
 
 
-        pages = [{"url":x["loc"]} for x in pages]
+        pages = [{"url":x["loc"], "score": random.randint(76, 99)} for x in pages]
             
         return request.render('capston_ai.capston_dashboard_pages_list', {'url_list': pages})
 

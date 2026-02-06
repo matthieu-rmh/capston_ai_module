@@ -16,6 +16,8 @@
                     <thead class="bg-light">
                         <tr>
                             <th>URL</th>
+                            <th>Score</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -23,10 +25,14 @@
                             <tr>
                                 <td class="fw-bold"><t t-esc="url_item['url']"/></td>
                                 <td>
+                                    <p><t t-esc="url_item['score']"/> %</p>
+                                </td>
+                                <td>
                                     <a t-att-href="url_item['url']" class="btn btn-sm btn-primary">
                                         Visit Page
                                     </a>
                                 </td>
+                                
                             </tr>
                         </t>
                     </tbody>
