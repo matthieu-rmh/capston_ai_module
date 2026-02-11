@@ -1,0 +1,84 @@
+/* Top Navigation Tabs */
+.nav-tabs-custom { border: none; margin-bottom: 40px; }
+.nav-tabs-custom .nav-link {
+    border: none;
+    color: #aaa;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    padding: 10px 25px;
+}
+.nav-tabs-custom .nav-link.active {
+    background: transparent;
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--text-dark);
+}
+
+h1 { font-family: 'Recoleta', serif; font-size: 3.5rem; font-weight: bold; margin-bottom: 0; }
+.sub-header { text-transform: uppercase; letter-spacing: 2px; font-size: 0.7rem; font-weight: bold; color: #555; }
+
+/* Table Container */
+.table-wrapper {
+    background: white;
+    border-radius: 35px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.table thead th {
+    border: none;
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    color: #888;
+    padding-bottom: 20px;
+}
+
+.table tbody td {
+    vertical-align: middle;
+    padding: 20px 10px;
+    border-bottom: 1px solid #f8f8f8;
+    font-size: 0.85rem;
+}
+
+/* Specialized Components */
+.type-badge {
+    font-size: 0.65rem;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: #f8f9fa;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.url-text { font-size: 0.7rem; color: #aaa; display: block; }
+
+.ai-status-waiting { font-style: italic; color: #999; font-weight: bold; font-size: 0.8rem; }
+.ai-status-success { color: var(--capston-green); font-weight: bold; font-size: 0.8rem; }
+
+/* Action Buttons */
+.btn-generate {
+    border: 1px solid var(--capston-green);
+    background: #e8f5e9;
+    color: var(--capston-green);
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 6px 15px;
+}
+
+.btn-apply {
+    background: #ccc;
+    color: white;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 6px 15px;
+    border: none;
+}
+
+.btn-apply.active {
+    background: var(--text-dark);
+}

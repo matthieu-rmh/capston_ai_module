@@ -16,9 +16,9 @@
                 <li class="nav-item">
                     <a href="/capston-dashboard-home" t-attf-class="nav-link {{ request.httprequest.path == '/capston-dashboard-home' and 'active' or '' }}"><i class="bi bi-house-door me-2"></i> Home</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a href="/analytics" t-attf-class="nav-link {{ request.httprequest.path == '/analytics' and 'active' or '' }}"><i class="bi bi-house-door me-2"></i> Analytics</a>
-                </li> -->
+                <li class="nav-item">
+                    <a href="/ai-pilot" t-attf-class="nav-link {{ request.httprequest.path == '/ai-pilot' and 'active' or '' }}"><i class="bi bi-house-door me-2"></i> AI Pilot</a>
+                </li>
                 <li class="nav-item">
                     <a href="/capston-dashboard" t-attf-class="nav-link {{ request.httprequest.path == '/capston-dashboard' and 'active' or '' }}"><i class="bi bi-house-door me-2"></i> Dashboard</a>
                 </li>
@@ -192,6 +192,103 @@
         </div>
     </div>
 </div>
+      </t>
+    </template>
+
+<template id="ai_pilot" name="AI Pilot">
+    <t t-call="capston_ai.capston_dashboard_template">
+        <div class="container-fluid">
+        <ul class="nav nav-tabs nav-tabs-custom">
+            <li class="nav-item"><a class="nav-link active" href="#">Optimisation des titres</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Descriptions</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Médias et Alts</a></li>
+        </ul>
+
+        <div class="mb-5">
+            <h1>Pilotage IA.</h1>
+            <div class="sub-header">Traitement du catalogue Odoo</div>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th width="40"><input type="checkbox" class="form-check-input"/></th>
+                        <th>Page / Lien Produit</th>
+                        <th>Type</th>
+                        <th>Date de Pub.</th>
+                        <th>Titre Initial</th>
+                        <th class="text-success">Titre Généré par Capston</th>
+                        <th class="text-end">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" class="form-check-input"/></td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-link-45deg fs-4 me-2 text-muted"></i>
+                                <div>
+                                    <div class="fw-bold">CHAISE BUREAU ERGONOMIQUE</div>
+                                    <span class="url-text">/shop/product/1</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="type-badge">Produit</span></td>
+                        <td class="text-muted">12/10/2023</td>
+                        <td class="text-muted small">Chaise bureau - Noir - Qualité Premium</td>
+                        <td><span class="ai-status-waiting">EN ATTENTE D'IA...</span></td>
+                        <td class="text-end">
+                            <button class="btn btn-generate me-2"><i class="bi bi-arrow-clockwise me-1"></i> GÉNÉRER</button>
+                            <button class="btn btn-apply"><i class="bi bi-check2 me-1"></i> APPLIQUER</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="checkbox" class="form-check-input"/></td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-link-45deg fs-4 me-2 text-muted"></i>
+                                <div>
+                                    <div class="fw-bold">LAMPE LED ARCHITECTE</div>
+                                    <span class="url-text">/shop/product/3</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="type-badge">Produit</span></td>
+                        <td class="text-muted">20/01/2024</td>
+                        <td class="text-muted small">Lampe LED Architecte - Éclairage Pro</td>
+                        <td><span class="ai-status-success">Lampe LED Architecte | Éclairage Studio Premium</span></td>
+                        <td class="text-end">
+                            <button class="btn btn-generate me-2"><i class="bi bi-arrow-clockwise me-1"></i> GÉNÉRER</button>
+                            <button class="btn btn-apply active"><i class="bi bi-check2 me-1"></i> APPLIQUER</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="checkbox" class="form-check-input"/></td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-link-45deg fs-4 me-2 text-muted"></i>
+                                <div>
+                                    <div class="fw-bold">MOBILIER BUREAU</div>
+                                    <span class="url-text">/shop/category/furniture</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="type-badge" style="background: #fff3e0; color: #ff9800;">Catégorie</span></td>
+                        <td class="text-muted">10/08/2023</td>
+                        <td class="text-muted small">Nos Meubles</td>
+                        <td><span class="ai-status-success">Mobilier de Bureau Design : Aménagez votre Espace</span></td>
+                        <td class="text-end">
+                            <button class="btn btn-generate me-2"><i class="bi bi-arrow-clockwise me-1"></i> GÉNÉRER</button>
+                            <button class="btn btn-apply active"><i class="bi bi-check2 me-1"></i> APPLIQUER</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
       </t>
     </template>
 

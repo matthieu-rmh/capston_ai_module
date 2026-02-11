@@ -49,6 +49,15 @@ class CapstonController(http.Controller):
             
     #     return request.render('capston_ai.capston_analytics', {})
 
+    # AI Pilot
+    @http.route('/ai-pilot', type='http', auth="user", website=True)
+    def ai_pilot(self, **kw):
+        # Security check: Check if user belongs to the 'Settings' group (Admin)
+        if not request.env.user.has_group('base.group_system'):
+            return request.render('website.403')  # Forbidden access page
+            
+        return request.render('capston_ai.ai_pilot', {})
+
 # Capston AI Search Console
     @http.route('/ai-search-console', type='http', auth="user", website=True)
     def ai_search_console(self, **kw):
