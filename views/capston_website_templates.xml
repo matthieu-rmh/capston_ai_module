@@ -17,6 +17,9 @@
                     <a href="/capston-dashboard-home" t-attf-class="nav-link {{ request.httprequest.path == '/capston-dashboard-home' and 'active' or '' }}"><i class="bi bi-house-door me-2"></i> Home</a>
                 </li>
                 <li class="nav-item">
+                    <a href="/analytics" t-attf-class="nav-link {{ request.httprequest.path == '/analytics' and 'active' or '' }}"><i class="bi bi-house-door me-2"></i> Analytics</a>
+                </li>
+                <li class="nav-item">
                     <a href="/capston-dashboard" t-attf-class="nav-link {{ request.httprequest.path == '/capston-dashboard' and 'active' or '' }}"><i class="bi bi-house-door me-2"></i> Dashboard</a>
                 </li>
                 <li class="nav-item">
@@ -110,6 +113,88 @@
       </t>
     </template>
 
+    <template id="capston_analytics" name="Analytics">
+    <t t-call="capston_ai.capston_dashboard_template">
+      <div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <div>
+            <div class="small fw-bold text-uppercase" style="letter-spacing: 1px; font-size: 0.7rem;">
+                <i class="bi bi-stars text-warning me-1"></i> Moteur de recommandation actif
+            </div>
+            <h1>Analytics.</h1>
+        </div>
+        <button class="btn btn-scan text-uppercase"><i class="bi bi-arrow-clockwise me-2"></i> Scan Global</button>
+    </div>
+
+    <div class="row g-4 mb-5">
+        <div class="col-md-3">
+            <div class="stat-card">
+                <span class="trend-badge trend-up">↗ +4.2%</span>
+                <div class="rounded-circle bg-light d-flex align-items-center justify-content-center mb-2" style="width: 40px; height: 40px;">
+                    <i class="bi bi-shield-check"></i>
+                </div>
+                <div class="metric-value">62.4 <small class="text-muted fs-6">/100</small></div>
+                <div class="metric-label">Santé Catalogue <i class="bi bi-info-circle ms-1"></i></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card">
+                <span class="trend-badge trend-up">↗ +12%</span>
+                <div class="rounded-circle bg-light d-flex align-items-center justify-content-center mb-2" style="width: 40px; height: 40px;">
+                    <i class="bi bi-type"></i>
+                </div>
+                <div class="metric-value">84%</div>
+                <div class="metric-label">Titres IA <i class="bi bi-info-circle ms-1"></i></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card">
+                <span class="trend-badge trend-up">↗ +8%</span>
+                <div class="rounded-circle bg-light d-flex align-items-center justify-content-center mb-2" style="width: 40px; height: 40px;">
+                    <i class="bi bi-image"></i>
+                </div>
+                <div class="metric-value">76%</div>
+                <div class="metric-label">Optimisation Médias <i class="bi bi-info-circle ms-1"></i></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card">
+                <span class="trend-badge trend-down">↘ -2</span>
+                <div class="rounded-circle bg-light d-flex align-items-center justify-content-center mb-2" style="width: 40px; height: 40px;">
+                    <i class="bi bi-hdd-network"></i>
+                </div>
+                <div class="metric-value">03</div>
+                <div class="metric-label">Alertes Structure <i class="bi bi-info-circle ms-1"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-8">
+            <div class="chart-container">
+                <div class="d-flex justify-content-between mb-4">
+                    <h6 class="fw-bold small text-uppercase"><i class="bi bi-graph-up me-2"></i> Évolution de la qualité SEO</h6>
+                    <span class="text-muted smaller" style="font-size: 0.7rem;">30 DERNIERS JOURS</span>
+                </div>
+                <canvas id="lineChart" height="150"></canvas>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="chart-container">
+                <h6 class="fw-bold mb-4 small text-uppercase"><i class="bi bi-pie-chart me-2"></i> Répartition du catalogue</h6>
+                <canvas id="donutChart"></canvas>
+                <div class="mt-4 small">
+                    <div class="d-flex justify-content-between mb-1"><span><i class="bi bi-circle-fill text-primary me-2" style="font-size: 0.5rem;"></i> Optimisés</span> <b>54%</b></div>
+                    <div class="d-flex justify-content-between mb-1"><span><i class="bi bi-circle-fill text-warning me-2" style="font-size: 0.5rem;"></i> À améliorer</span> <b>32%</b></div>
+                    <div class="d-flex justify-content-between"><span><i class="bi bi-circle-fill text-danger me-2" style="font-size: 0.5rem;"></i> Critiques</span> <b>14%</b></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+      </t>
+    </template>
+
     <!-- Main Dashboard as of 02/05 -->
     <template id="capston_dashboard_main" name="Capston Dashboard">
     <t t-call="capston_ai.capston_dashboard_template">
@@ -127,7 +212,7 @@
                     <span class="badge border text-muted bg-white rounded-pill">TITRE TROP LONG</span>
                 </div>
                 <div class="comp-card obsolete">
-                    <p class="text-muted small mb-1">https://votre-boutique.com > produits > p-1002</p>
+                    <p class="text-muted small mb-1">https://site.com > produits > p-1002</p>
                     <h5 class="text-primary fw-bold">Chaise de bureau Ergonomique - Qualité Premium, Noir Mat et Confort...</h5>
                     <p class="text-muted small">Découvrez notre chaise de bureau ergonomique. Conçue pour un usage professionnel intense, elle offre un maintien lombaire exceptionnel et un design...</p>
                 </div>
@@ -139,7 +224,7 @@
                     <span class="badge bg-success-subtle text-success rounded-pill">OPTIMISÉ PAR CAPSTON AI</span>
                 </div>
                 <div class="comp-card optimized">
-                    <p class="text-muted small mb-1">https://votre-boutique.com > produits > p-1002</p>
+                    <p class="text-muted small mb-1">https://site.com > produits > p-1002</p>
                     <h5 class="text-primary fw-bold">Chaise de bureau Ergonomique | Performance et Confort</h5>
                     <p class="text-dark small"><strong>Maintien lombaire exceptionnel</strong> et design premium pour cette chaise ergonomique. Expédition sous 24h. Qualité certifiée Capston AI.</p>
                 </div>
@@ -205,6 +290,8 @@
 </div>
       </t>
     </template>
+
+    
   <!-- Menu for Capston AI dashboard page -->
     <record id="menu_capston_dashboard" model="website.menu">
       <field name="name">Capston AI</field>

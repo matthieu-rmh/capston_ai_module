@@ -8,7 +8,43 @@ import { rpc } from "@web/core/network/rpc";         // ← note: /rpc  not /rpc
 
 
 $(document).ready(async function (){
-
+    // Condition the logic to only apply on Analytics
+    if (window.location.pathname === "/analytics") {
+        const lineCtx = document.getElementById('lineChart').getContext('2d');
+        new Chart(lineCtx, {
+                type: 'line',
+                data: {
+                        labels: ['J-30', 'J-25', 'J-20', 'J-15', 'J-10', 'J-5', "Aujourd'hui"],
+                        datasets: [{
+                                label: 'Qualité SEO',
+                                data: [45, 48, 46, 52, 58, 60, 62],
+                                borderColor: '#121212',
+                                backgroundColor: 'rgba(200, 210, 255, 0.4)',
+                                fill: true,
+                                tension: 0.4,
+                                pointRadius: 5,
+                                pointBackgroundColor: '#121212'
+                            }]
+                        },
+                        options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, max: 100 } } }
+                    });
+                    
+                    // Donut Chart Data
+                    const donutCtx = document.getElementById('donutChart').getContext('2d');
+                    new Chart(donutCtx, {
+                            type: 'doughnut',
+                            data: {
+            labels: ['Optimisés', 'À améliorer', 'Critiques'],
+            datasets: [{
+                data: [54, 32, 14],
+                backgroundColor: ['#cbd7ff', '#f8e4b7', '#ffb5c0'],
+                borderWidth: 0
+            }]
+        },
+        options: { cutout: '70%', plugins: { legend: { display: false } } }
+    });
+}
+    
     // Condition the logic to only apply on shop's product template
     if (/^\/shop\/[^/?#]+/.test(window.location.pathname)){
 
