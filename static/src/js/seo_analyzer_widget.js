@@ -9,7 +9,7 @@ import { rpc } from "@web/core/network/rpc";         // ← note: /rpc  not /rpc
 
 $(document).ready(async function (){
     // Condition the logic to only apply on Analytics
-    if (window.location.pathname === "/analytics") {
+    if (window.location.pathname === "/capston-dashboard") {
         const lineCtx = document.getElementById('lineChart').getContext('2d');
         new Chart(lineCtx, {
                 type: 'line',

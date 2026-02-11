@@ -41,13 +41,13 @@ class CapstonController(http.Controller):
         return request.render('capston_ai.capston_dashboard_main', {})
 
         # Analytics
-    @http.route('/analytics', type='http', auth="user", website=True)
-    def capston_analytics(self, **kw):
-        # Security check: Check if user belongs to the 'Settings' group (Admin)
-        if not request.env.user.has_group('base.group_system'):
-            return request.render('website.403')  # Forbidden access page
+    # @http.route('/analytics', type='http', auth="user", website=True)
+    # def capston_analytics(self, **kw):
+    #     # Security check: Check if user belongs to the 'Settings' group (Admin)
+    #     if not request.env.user.has_group('base.group_system'):
+    #         return request.render('website.403')  # Forbidden access page
             
-        return request.render('capston_ai.capston_analytics', {})
+    #     return request.render('capston_ai.capston_analytics', {})
 
 # Capston AI Search Console
     @http.route('/ai-search-console', type='http', auth="user", website=True)
